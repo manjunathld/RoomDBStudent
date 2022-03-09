@@ -5,10 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [StudentTable::class], version = 1)
+@Database(entities = [StudentTable::class], version = 111)
 public abstract class StudentRoomDatabase : RoomDatabase() {
 
-    public abstract fun studentTableDAO(): StudentTable
+    public abstract fun studentDBDAO(): StudentDBDao
 
     companion object {
         @Volatile
@@ -21,8 +21,9 @@ public abstract class StudentRoomDatabase : RoomDatabase() {
                         studentRoomDatabase = Room.databaseBuilder(
                             context.applicationContext,
                             StudentRoomDatabase::class.java,
-                            "student_room_database"
-                        ).build()
+                            "student_room_database")
+                            .fallbackToDestructiveMigration()
+                            .build()
                     }
                 }
             }

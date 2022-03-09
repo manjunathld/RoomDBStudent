@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RoomDB</string>
+    <string name="enter_student_id_no">Enter student id</string>
+    <string name="enter_student_name">Enter student name</string>
+    <string name="enter_student_result">Enter student result</string>
+    <string name="insert">Insert</string>
 </resources>

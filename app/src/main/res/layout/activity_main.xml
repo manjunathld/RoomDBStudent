@@ -4,15 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="8dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_StudentID"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:hint="@string/enter_student_id_no"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/et_StudentName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_StudentName" />
+
+    <EditText
+        android:id="@+id/et_StudentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_student_name"
+        android:importantForAutofill="no"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_StudentResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_student_result"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/et_StudentName"
+        app:layout_constraintStart_toStartOf="@+id/et_StudentName"
+        app:layout_constraintTop_toBottomOf="@+id/et_StudentName" />
+
+    <Button
+        android:id="@+id/bv_insert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/insert"
+        app:layout_constraintEnd_toEndOf="@+id/et_StudentResult"
+        app:layout_constraintStart_toStartOf="@+id/et_StudentResult"
+        app:layout_constraintTop_toBottomOf="@+id/et_StudentResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
